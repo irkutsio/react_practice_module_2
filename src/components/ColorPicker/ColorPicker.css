@@ -1,0 +1,21 @@
+.ColorPicker_option {
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+}
+
+.ColorPicker_list {
+    display: flex;
+    gap: 12px;
+}
+
+.ColorPicker {
+    padding: 24px;
+    width: 500px;
+    border: 2px solid black;
+}
+
+.ColorPicker_option--active {
+    border-radius: 50%;
+}
