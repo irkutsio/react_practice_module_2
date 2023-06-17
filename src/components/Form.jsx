@@ -4,15 +4,15 @@ export class Form extends Component {
   state = {
     name: '',
     tag: '',
-    experience: 'junior',
-    licence: false,
+    // experience: 'junior',
+    // licence: false,
   };
 
   handleChange = evt => {
-    const { name, value } = evt.currentTarget;
     this.setState({
-      [name]: value,
+      [evt.currentTarget.name]: evt.currentTarget.value,
     });
+    // console.log(this.state)
   };
 
   handleSubmit = event => {
@@ -21,10 +21,10 @@ export class Form extends Component {
     this.reset();
   };
 
-  handleLicenceChange = e => {
-    console.dir(e.currentTarget.checked);
-    this.setState({ licence: e.currentTarget.checked });
-  };
+  // handleLicenceChange = e => {
+  //   console.dir(e.currentTarget.checked);
+  //   this.setState({ licence: e.currentTarget.checked });
+  // };
 
   reset = () => {
     this.setState({
@@ -55,7 +55,10 @@ export class Form extends Component {
           />
         </label>
 
-        <p>Ваш уровень: </p>
+        <br />
+        <button type="submit">Submit</button>
+
+        {/* <p>Ваш уровень: </p>
         <label>
           <input
             type="radio"
@@ -85,16 +88,14 @@ export class Form extends Component {
             checked={this.state.experience === 'senior'}
           />
           senior
-        </label>
-        <br />
-        <button type="submit">Submit</button>
+        </label> */}
 
-        <input
+        {/* <input
           type="checkbox"
           name="licence"
           checked={this.state.licence}
           onChange={this.handleLicenceChange}
-        />
+        /> */}
       </form>
     );
   }

@@ -1,4 +1,4 @@
-// // import Counter from './Counter/Counter';
+import Counter from './Counter/Counter';
 // // import { Dropdown } from './Dropdown/Dropdown';
 // // import { ColorPicker } from './ColorPicker/ColorPicker';
  import { ToDoList } from './ToDo/ToDo';
@@ -67,6 +67,7 @@ this.setState({ inputValue: event.currentTarget.value });
           <p></p>
         </div>
         <ToDoList todos={todos} onDeleteToDo={this.deleteToDo} />
+        <Counter/>
       </div>
     );
   }

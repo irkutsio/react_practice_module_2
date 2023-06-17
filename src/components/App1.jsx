@@ -4,7 +4,7 @@ import { Form } from './Form';
 export class App1 extends Component {
   handleSubmit = event => {
     event.preventDefault();
-    console.log(this.state);
+    // console.log(this.state);
   };
 
   formSubmitHandler = data => {

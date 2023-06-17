@@ -1,46 +1,70 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import './Counter.css';
 import { Controler } from './Controls';
 
-class Counter extends Component {
-  static defaultProps = {
-    initialValue: 0,
+
+
+
+export const Counter = () => {
+  const [value, setValue] = useState(0);
+
+  const hadlerIncrement = () => {
+    setValue(prevValue => prevValue + 1);
   };
 
-  state = {
-    value: this.props.initialValue,
+  const handlerDescrement = () => {
+    setValue(prevValue => prevValue - 1);
   };
 
-  //   hadlerIncrement = () => {
-  //     this.setState({
-  //       value: 8, // перезаписали значение
-  //     });
-  //   };
+  return (
+    <div className="Counter">
+      <span className="Counter_value">{value}</span>
 
-  hadlerIncrement = () => {
-    this.setState(prevState => ({
-      value: prevState.value + 1,
-    }));
-  };
+      <Controler
+        onIncrement={hadlerIncrement}
+        onDecrement={handlerDescrement}
+      />
+    </div>
+  );
+};
 
-  handlerDescrement = () => {
-    this.setState(prevState => ({
-      value: prevState.value - 1,
-    }));
-  };
 
-  render() {
-    return (
-      <div className="Counter">
-        <span className="Counter_value">{this.state.value}</span>
+// class Counter extends Component {
 
-        <Controler
-          onIncrement={this.hadlerIncrement}
-          onDecrement={this.handlerDescrement}
-        />
-      </div>
-    );
-  }
-}
+//   state = {
+//     value: this.props.initialValue,
+//   };
 
-export default Counter;
+//   //   hadlerIncrement = () => {
+//   //     this.setState({
+//   //       value: 8, // перезаписали значение
+//   //     });
+//   //   };
+
+//   hadlerIncrement = () => {
+//     this.setState(prevState => ({
+//       value: prevState.value + 1,
+//     }));
+//   };
+
+//   handlerDescrement = () => {
+//     this.setState(prevState => ({
+//       value: prevState.value - 1,
+//     }));
+//   };
+
+//   render() {
+//     return (
+//       <div className="Counter">
+//         <span className="Counter_value">{this.state.value}</span>
+
+//         <Controler
+//           onIncrement={this.hadlerIncrement}
+//           onDecrement={this.handlerDescrement}
+//         />
+//       </div>
+//     );
+//   }
+// }
+
+// export default Counter;
