@@ -1,8 +1,6 @@
-import React, { Component, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Counter.css';
 import { Controler } from './Controls';
-
-
 
 
 export const Counter = () => {
@@ -16,6 +14,10 @@ export const Counter = () => {
     setValue(prevValue => prevValue - 1);
   };
 
+  useEffect(()=>{
+    console.log('useEffect')
+  },[value])
+
   return (
     <div className="Counter">
       <span className="Counter_value">{value}</span>
@@ -27,6 +29,10 @@ export const Counter = () => {
     </div>
   );
 };
+
+
+
+
 
 
 // class Counter extends Component {

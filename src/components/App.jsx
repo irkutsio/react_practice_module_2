@@ -1,7 +1,7 @@
-import Counter from './Counter/Counter';
+import { Counter } from './Counter/Counter';
 // // import { Dropdown } from './Dropdown/Dropdown';
-// // import { ColorPicker } from './ColorPicker/ColorPicker';
- import { ToDoList } from './ToDo/ToDo';
+// import { ColorPicker } from './ColorPicker/ColorPicker';
+//  import { ToDoList } from './ToDo/ToDo';
 import React, { Component } from 'react';
 
 export class App extends Component {
@@ -40,13 +40,13 @@ export class App extends Component {
 
   handleInputChange = event => {
     // console.log(event.currentTarget.value);
-this.setState({ inputValue: event.currentTarget.value });
+    this.setState({ inputValue: event.currentTarget.value });
   };
 
   render() {
-    const { todos } = this.state;
+    // const { todos } = this.state;
 
-    const toDoCompletedCounts = todos.filter(todo => todo.completed)
+    // const toDoCompletedCounts = todos.filter(todo => todo.completed)
 
     // const toDoCompletedCounts = todos.reduce(
     //   (todo, acc) => (todo.completed ? acc + 1 : acc),
@@ -60,26 +60,27 @@ this.setState({ inputValue: event.currentTarget.value });
           value={this.state.inputValue}
           onChange={this.handleInputChange}
         /> */}
-
-        <div>
+        {/* <ColorPicker options={colorPickerOption}/> */}
+        {/* <div>
           <p>общее количество туду:{todos.length}</p>
           <p>количество выполненых:{toDoCompletedCounts.length}</p>
           <p></p>
-        </div>
-        <ToDoList todos={todos} onDeleteToDo={this.deleteToDo} />
-        <Counter/>
+        </div> */}
+        {/* <ToDoList todos={todos} onDeleteToDo={this.deleteToDo} />
+        */}
+         <Counter/>
       </div>
     );
   }
 }
 
-// // const colorPickerOption = [
-// //   { hex: '#FFA07A', label: 'pink' },
-// //   { hex: '#00FF00', label: 'green' },
-// //   { hex: '#9400D3', label: 'violet' },
-// //   { hex: '#4169E1', label: 'blue' },
-// //   { hex: '#8B0000', label: 'red' },
-// // ];
+// const colorPickerOption = [
+//   { hex: '#FFA07A', label: 'pink' },
+//   { hex: '#00FF00', label: 'green' },
+//   { hex: '#9400D3', label: 'violet' },
+//   { hex: '#4169E1', label: 'blue' },
+//   { hex: '#8B0000', label: 'red' },
+// ];
 
 // //  {/* <Dropdown /> */}
 // //       {/* <Counter initialValue={0}/> */}
